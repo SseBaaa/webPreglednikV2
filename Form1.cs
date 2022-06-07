@@ -13,7 +13,9 @@ using EasyTabs;
 
 namespace webPreglednikV2
 {
-    public partial class Form1 : Form
+
+    
+public partial class Form1 : Form
     {
         protected TitleBarTabs ParentTabs
         {
@@ -55,17 +57,6 @@ namespace webPreglednikV2
             txtUrls.Text = e.Address.ToString();
         }
 
-        private void chromiumWebBrowser1_LoadingStateChanged(object sender, CefSharp.LoadingStateChangedEventArgs e)
-        {
-
-        }
-
-        
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             c.Load(txtUrls.Text);
@@ -92,19 +83,22 @@ namespace webPreglednikV2
             c.Load(txtUrls.Text);
         }
 
-        private void btnBook_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnSearch_Click(object sender, EventArgs e)
         {
             c.Load(txtUrls.Text);
+        }
+
+        private void txtUrls_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                btnSearch.PerformClick();
+            }
+        }
+
+        private void btnBook_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Error", "Ne radi" , MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
     }
 }

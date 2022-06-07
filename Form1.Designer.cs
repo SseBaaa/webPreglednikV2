@@ -47,16 +47,15 @@
             this.chromiumWebBrowser1.Name = "chromiumWebBrowser1";
             this.chromiumWebBrowser1.Size = new System.Drawing.Size(875, 415);
             this.chromiumWebBrowser1.TabIndex = 2;
-            this.chromiumWebBrowser1.LoadingStateChanged += new System.EventHandler<CefSharp.LoadingStateChangedEventArgs>(this.chromiumWebBrowser1_LoadingStateChanged);
             // 
             // panel1
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.Location = new System.Drawing.Point(0, 43);
+            this.panel1.Location = new System.Drawing.Point(0, 40);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(915, 473);
+            this.panel1.Size = new System.Drawing.Size(915, 476);
             this.panel1.TabIndex = 7;
             // 
             // txtUrls
@@ -67,7 +66,7 @@
             this.txtUrls.Name = "txtUrls";
             this.txtUrls.Size = new System.Drawing.Size(613, 20);
             this.txtUrls.TabIndex = 7;
-            this.txtUrls.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.txtUrls.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtUrls_KeyDown);
             // 
             // btnBack
             // 
@@ -99,6 +98,7 @@
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            this.btnSearch.Enter += new System.EventHandler(this.btnSearch_Click);
             // 
             // btnBook
             // 
@@ -148,7 +148,6 @@
             this.Controls.Add(this.chromiumWebBrowser1);
             this.Name = "Form1";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
