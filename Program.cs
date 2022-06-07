@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using EasyTabs;
 
 namespace webPreglednikV2
 {
@@ -14,9 +15,30 @@ namespace webPreglednikV2
         [STAThread]
         static void Main()
         {
+            // promjena bzvz 
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            
+            AppContainer container = new AppContainer();
+
+            container.Tabs.Add
+                (
+                new TitleBarTab(container)
+                {
+                    Content = new Form1
+                    {
+                        Text = "new tab"
+                       
+                    }
+                }
+            );
+
+            container.SelectedTabIndex = 0;
+
+            TitleBarTabsApplicationContext applicationcontext = new TitleBarTabsApplicationContext();
+            applicationcontext.Start(container);
+            Application.Run(applicationcontext);
         }
     }
 }

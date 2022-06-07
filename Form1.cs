@@ -9,21 +9,33 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using EasyTabs;
 
 namespace webPreglednikV2
 {
     public partial class Form1 : Form
     {
+        protected TitleBarTabs ParentTabs
+        {
+            get
+            {
+                return (ParentForm as TitleBarTabs);
+            }
+        }
         public Form1()
         {
             InitializeComponent();
             InitChromium();
         }
-        public ChromiumWebBrowser c;
 
-        public void InitChromium()
+    public ChromiumWebBrowser c;
+    public void InitChromium()
         {
-            Cef.Initialize(new CefSettings());
+            if (!Cef.IsInitialized) // Check before init
+            {
+                CefSettings settings = new CefSettings();
+                Cef.Initialize(settings);
+            }
 
             c = new ChromiumWebBrowser("www.google.hr");
             c.AddressChanged += C_AddressChanged;
@@ -48,21 +60,7 @@ namespace webPreglednikV2
 
         }
 
-        private void btnBack_Click(object sender, EventArgs e)
-        {
-            c.Back();
-        }
-
-        private void btnFow_Click(object sender, EventArgs e)
-        {
-            c.Forward();
-        }
-
-        private void btnSearch_Click(object sender, EventArgs e)
-        {
-            
-        }
-
+        
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
@@ -73,44 +71,40 @@ namespace webPreglednikV2
             c.Load(txtUrls.Text);
         }
 
-        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
-
-        private void editToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void fowardToolStripMenuItem_Click(object sender, EventArgs e)
+        private void btnFoward_Click(object sender, EventArgs e)
         {
             c.Forward();
         }
 
-        private void backToolStripMenuItem_Click(object sender, EventArgs e)
+        private void btnBack_Click(object sender, EventArgs e)
         {
             c.Back();
         }
 
-        private void toolStripButton3_Click(object sender, EventArgs e)
+        private void btnName_Click(object sender, EventArgs e)
         {
-            c.Load(txtUrlss.Text);
+            c.Load("www.google.hr");
+           
         }
 
-        private void toolStripButton1_Click(object sender, EventArgs e)
+        private void btnRefresh_Click(object sender, EventArgs e)
         {
-            c.Back();
+            c.Load(txtUrls.Text);
         }
 
-        private void toolStripButton2_Click(object sender, EventArgs e)
+        private void btnBook_Click(object sender, EventArgs e)
         {
-            c.Forward();
+
         }
 
-        private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        private void Form1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            c.Load(txtUrls.Text);
         }
     }
 }

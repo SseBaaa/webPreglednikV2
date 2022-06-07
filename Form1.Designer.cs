@@ -32,12 +32,12 @@
             this.chromiumWebBrowser1 = new CefSharp.WinForms.ChromiumWebBrowser();
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtUrls = new System.Windows.Forms.TextBox();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
-            this.txtUrlss = new System.Windows.Forms.ToolStripTextBox();
-            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
-            this.toolStrip1.SuspendLayout();
+            this.btnBack = new System.Windows.Forms.Button();
+            this.btnFoward = new System.Windows.Forms.Button();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.btnBook = new System.Windows.Forms.Button();
+            this.btnName = new System.Windows.Forms.Button();
+            this.btnRefresh = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // chromiumWebBrowser1
@@ -54,82 +54,101 @@
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.Location = new System.Drawing.Point(0, 35);
+            this.panel1.Location = new System.Drawing.Point(0, 43);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(915, 481);
+            this.panel1.Size = new System.Drawing.Size(915, 473);
             this.panel1.TabIndex = 7;
             // 
             // txtUrls
             // 
-            this.txtUrls.Location = new System.Drawing.Point(98, 5);
+            this.txtUrls.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtUrls.Location = new System.Drawing.Point(99, 13);
             this.txtUrls.Name = "txtUrls";
-            this.txtUrls.Size = new System.Drawing.Size(206, 20);
+            this.txtUrls.Size = new System.Drawing.Size(613, 20);
             this.txtUrls.TabIndex = 7;
             this.txtUrls.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
-            // toolStrip1
+            // btnBack
             // 
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton1,
-            this.toolStripButton2,
-            this.txtUrlss,
-            this.toolStripButton3});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(915, 25);
-            this.toolStrip1.TabIndex = 8;
-            this.toolStrip1.Text = "toolStrip1";
-            this.toolStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.toolStrip1_ItemClicked);
+            this.btnBack.Image = ((System.Drawing.Image)(resources.GetObject("btnBack.Image")));
+            this.btnBack.Location = new System.Drawing.Point(12, 11);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(23, 23);
+            this.btnBack.TabIndex = 8;
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
-            // toolStripButton1
+            // btnFoward
             // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton1.Text = "toolStripButton1";
-            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
+            this.btnFoward.Image = ((System.Drawing.Image)(resources.GetObject("btnFoward.Image")));
+            this.btnFoward.Location = new System.Drawing.Point(41, 11);
+            this.btnFoward.Name = "btnFoward";
+            this.btnFoward.Size = new System.Drawing.Size(23, 23);
+            this.btnFoward.TabIndex = 9;
+            this.btnFoward.UseVisualStyleBackColor = true;
+            this.btnFoward.Click += new System.EventHandler(this.btnFoward_Click);
             // 
-            // toolStripButton2
+            // btnSearch
             // 
-            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton2.Text = "toolStripButton2";
-            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
+            this.btnSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSearch.Location = new System.Drawing.Point(718, 11);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(75, 23);
+            this.btnSearch.TabIndex = 10;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
-            // txtUrlss
+            // btnBook
             // 
-            this.txtUrlss.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtUrlss.Name = "txtUrlss";
-            this.txtUrlss.Size = new System.Drawing.Size(100, 25);
+            this.btnBook.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnBook.Location = new System.Drawing.Point(828, 11);
+            this.btnBook.Name = "btnBook";
+            this.btnBook.Size = new System.Drawing.Size(75, 23);
+            this.btnBook.TabIndex = 11;
+            this.btnBook.Text = "Bookmarks";
+            this.btnBook.UseVisualStyleBackColor = true;
+            this.btnBook.Click += new System.EventHandler(this.btnBook_Click);
             // 
-            // toolStripButton3
+            // btnName
             // 
-            this.toolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
-            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton3.Name = "toolStripButton3";
-            this.toolStripButton3.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton3.Text = "toolStripButton3";
-            this.toolStripButton3.Click += new System.EventHandler(this.toolStripButton3_Click);
+            this.btnName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnName.Image = ((System.Drawing.Image)(resources.GetObject("btnName.Image")));
+            this.btnName.Location = new System.Drawing.Point(799, 11);
+            this.btnName.Name = "btnName";
+            this.btnName.Size = new System.Drawing.Size(23, 23);
+            this.btnName.TabIndex = 12;
+            this.btnName.UseVisualStyleBackColor = true;
+            this.btnName.Click += new System.EventHandler(this.btnName_Click);
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Image = ((System.Drawing.Image)(resources.GetObject("btnRefresh.Image")));
+            this.btnRefresh.Location = new System.Drawing.Point(70, 11);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(23, 23);
+            this.btnRefresh.TabIndex = 13;
+            this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(915, 516);
-            this.Controls.Add(this.toolStrip1);
+            this.Controls.Add(this.btnRefresh);
+            this.Controls.Add(this.btnName);
+            this.Controls.Add(this.btnBook);
+            this.Controls.Add(this.btnSearch);
+            this.Controls.Add(this.btnFoward);
+            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.txtUrls);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.chromiumWebBrowser1);
             this.Name = "Form1";
             this.Text = "Form1";
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -139,11 +158,12 @@
         private CefSharp.WinForms.ChromiumWebBrowser chromiumWebBrowser1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox txtUrls;
-        private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
-        private System.Windows.Forms.ToolStripButton toolStripButton2;
-        private System.Windows.Forms.ToolStripTextBox txtUrlss;
-        private System.Windows.Forms.ToolStripButton toolStripButton3;
+        private System.Windows.Forms.Button btnBack;
+        private System.Windows.Forms.Button btnFoward;
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.Button btnBook;
+        private System.Windows.Forms.Button btnName;
+        private System.Windows.Forms.Button btnRefresh;
     }
 }
 
